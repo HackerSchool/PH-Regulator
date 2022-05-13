@@ -35,7 +35,7 @@
     <img src="https://github.com/HackerSchool/PH-Regulator/blob/main/logo-modified.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">PH Regulator</h3>
 
   <p align="center">
   
@@ -73,6 +73,9 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
+    
+PH regulator project aims to be an intelligent ph meter and dosemeter for water systems that require a precise PH level.
+Using a Raspberry Pi and some pumps and sensors, important information is displayed on a website for user interaction.
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
