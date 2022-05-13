@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html  >
+    <head>
+        <title>PH regulator</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="PH regulator dashboard">
+        <meta name="keywords" content="PH, temperature, remaining PH solution">
+        <meta name="author" content="Luís Barbosa">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <!-- <meta http-equiv="refresh" content="5"> -->
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script type="text/javascript"> 
+            function display_c(){
+                var refresh=1000; // Refresh rate in milli seconds
+                mytime=setTimeout('display_ct()',refresh)
+            }
+            function display_ct() {
+                var x = new Date()
+                document.getElementById('ct').innerHTML = x;
+                display_c();
+            }
+        </script>
+    </head>
+
+    <body style="background-color: #006064;" onload=display_ct();>
+        
+        <header>
+            <a href="index.html">
+                <img class="logo" src="logo-modified.png" alt="logo" height="100" width="100">
+            </a>
+           
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="page2.html">Settings</a></li>
+
+                </ul>
+            </nav>
+            <a class="cta" href="#"><Button>Support</Button></a>
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p><bold>Dashboard</bold></p>
+        <br>
+        <p>Date/Time: <span id="ct"></span></p>
+
+        <script>
+            var dt = new Date();
+            document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
+        </script>
+
+        <br>
+        
+        <div style="width: 100%; padding-bottom: 50%;"> 
+
+            <div style="width: 50% ; height: 100px; float: left;"> 
+                <img class="ph_logo" src="ph-modified.png" alt="ph logo" height="200" width="200">
+                <br>
+                PH
+                <br>
+                <span id="current_temperature">0</span>
+            </div>
+    
+            <br>
+    
+            <div id="myPlot" style="width: 50%; height: 50%; float:right;">
+                <script>
+                    var xArray = [50,60,70,80,90,100,110,120,130,140,150];
+                    var yArray = [7,8,8,9,9,9,10,11,14,14,15];
+                    var current_time = 1000;
+            
+                    // Define Data
+                    var data = [{
+                    x: xArray,
+                    y: yArray,
+                    mode:"lines"
+                    }];
+            
+                    // Define Layout
+                    var layout = {
+                    xaxis: {range: [0, 160], title: "Time (s)"},
+                    yaxis: {range: [0, 14], title: "ph level"},  
+                    title: "PH evolution"
+                    };
+            
+                    // Display using Plotly
+                    Plotly.newPlot("myPlot", data, layout);
+                </script>
+            </div>
+        </div>
+    
+        
+        <BR>
+                 
+        <div>
+            <img class="temp_logo" src="temperature-modified.png" alt="temperature logo" height="200" width="200">
+            <br>
+            Temperature (ºC)
+            <br>
+            <span id="current_temperature">0</span>
+        </div>
+       
+    </body>
+</html>
